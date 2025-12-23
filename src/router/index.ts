@@ -5,7 +5,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'dashboard',
-    component: () => import('../views/admin/Dashboard.vue'),
+    component: () => import('../views/admin/Blank.vue'),
     meta: { title: 'Dashboard', layout: 'main', icon: HomeIcon },
   },
   // {

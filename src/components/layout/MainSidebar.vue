@@ -22,11 +22,11 @@ type MenuItem =
 const menus: MenuItem[] = [
     { header: 'Menu Utama' },
     { path: '/', icon: HomeIcon, title: 'Dashboard' },
-    { path: '/pendaftaran', icon: PencilSquareIcon, title: 'Pendaftaran' }, 
-    { path: '/poli/umum', icon: HeartIcon, title: 'Poliklinik', badge: 5 }, 
+    { path: '/pendaftaran', icon: PencilSquareIcon, title: 'Pendaftaran' },
+    { path: '/poli/umum', icon: HeartIcon, title: 'Poliklinik', badge: 5 },
     { header: 'Layanan' },
-    { path: '/farmasi', icon: BeakerIcon, title: 'Farmasi' }, 
-    { path: '/kasir', icon: BanknotesIcon, title: 'Kasir' }, 
+    { path: '/farmasi', icon: BeakerIcon, title: 'Farmasi' },
+    { path: '/kasir', icon: BanknotesIcon, title: 'Kasir' },
 ]
 
 function navigate(path: string | undefined) {
@@ -38,14 +38,19 @@ function navigate(path: string | undefined) {
     <aside
         class="bg-gradient-to-b from-[#14532d] to-[#064e3b] text-white h-screen flex flex-col transition-all duration-300 ease-in-out shadow-2xl z-40 border-r border-white/5"
         :class="isOpen ? 'w-[200px] py-[12px] px-[10px] opacity-100' : 'w-0 p-0 opacity-0 overflow-hidden'">
-        <div class="mb-[12px] border-b border-white/10 pb-[12px] px-[5px] flex items-center gap-[8px]">
-            <div
-                class="w-[30px] h-[30px] bg-white rounded-[8px] flex items-center justify-center text-[#064e3b] text-[15px] font-bold shadow-lg">
-                S
-            </div>
+        <div class="mb-[12px] border-b border-white/10 pb-[12px] px-[5px] flex items-center gap-[10px]">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6vw8bWS5cJl1KEb3NSK1H74jOxve_rBSfpJZU2jpmKZ6SXEjIF0a5WvLy3ZolO-e3kVzK_9Pl9dCzRFka0pjiWz8WHfi9lMVddUc-m3QDxeNP7IDpXw2joyjt4XJMgyIdtYTwFHTpSfo8tie-MH3TA5HM1zHQthgiEc9VZ-lZQ5Q0b9RwLAR-VQ/s320/GKL27_logo-kota-tasikmalaya%20-%20Koleksilogo.com.png"
+                alt="Logo Tasikmalaya" class="w-[32px] h-auto drop-shadow-md" />
+
             <div>
-                <h1 class="font-bold text-[15px] leading-tight">SIMPUS</h1>
-                <span class="text-[9px] uppercase tracking-[1px] opacity-70">Operational</span>
+                <h1 class="font-bold text-[10px] leading-tight text-white tracking-wide">
+                    UPTD PUSKESMAS URUG
+                </h1>
+                <div class="flex items-center gap-1 opacity-80">
+                    <span class="text-[9px] font-medium uppercase tracking-[1px] text-green-50">
+                        KOTA TASIKMALAYA
+                    </span>
+                </div>
             </div>
         </div>
 
