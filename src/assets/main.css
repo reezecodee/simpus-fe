@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer base {
+    html {
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        @apply text-sm text-gray-800 antialiased bg-[#f3f4f6];
+        font-size: 14px;
+    }
+
+    html,
+    body {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: #1f2937;
+    }
+}
+
+/* Custom Scrollbar biar cantik kayak aslinya */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
