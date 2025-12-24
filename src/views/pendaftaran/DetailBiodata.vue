@@ -24,8 +24,8 @@ const router = useRouter()
 const activeTab = ref('biodata')
 const tabs = [
   { id: 'biodata', name: 'Biodata Dasar', icon: UserIcon },
-  { id: 'identitas', name: 'Dokumen Identitas', icon: IdentificationIcon },
-  { id: 'keluarga', name: 'Data Keluarga', icon: UsersIcon },
+  { id: 'identitas', name: 'Identitas Pasien', icon: IdentificationIcon },
+  { id: 'keluarga', name: 'Keluarga Pasien', icon: UsersIcon },
   { id: 'riwayat', name: 'Riwayat Kunjungan', icon: ClockIcon },
 ]
 
@@ -97,7 +97,7 @@ const riwayatList = [
         <ArrowLeftIcon class="w-5 h-5 text-gray-600" />
       </button>
       <div>
-        <h1 class="text-[20px] font-bold text-gray-900 tracking-tight">Detail Rekam Medis</h1>
+        <h1 class="text-[20px] font-bold text-gray-900 tracking-tight uppercase">Detail Rekam Medis</h1>
         <p class="text-[12px] text-gray-500">Arsip data induk kependudukan dan riwayat pasien.</p>
       </div>
     </div>
@@ -107,7 +107,6 @@ const riwayatList = [
       <div class="col-span-12 md:col-span-3 space-y-4">
         <div class="bg-white rounded-lg border border-gray-200 p-6 text-center shadow-sm border-t-[4px] border-t-green-600">
            <img :src="avatarUrl" class="w-32 h-32 mx-auto mb-4 bg-gray-50 rounded-lg border border-gray-100 object-cover" />
-           <h2 class="text-[14px] font-bold text-gray-900 uppercase leading-tight">{{ pasien.nama }}</h2>
            <div class="mt-2 font-mono text-[12px] text-green-700 bg-green-50 py-1 rounded border border-green-100 font-bold uppercase">
             RM: {{ pasien.no_rm }}
           </div>
@@ -174,13 +173,13 @@ const riwayatList = [
           </div>
 
           <div v-if="activeTab === 'riwayat'" class="p-8 space-y-6">
-            <h3 class="text-[13px] font-bold uppercase border-b mb-4 pb-3">Log Kunjungan Pasien</h3>
+            <h3 class="text-[13px] font-bold uppercase border-b mb-4 pb-3">Riwayat Kunjungan Pasien</h3>
             <BaseDataTable :columns="colRiwayat" :data="riwayatList" hide-search>
                 <template #tgl="{ value }">
-                    <span class="font-mono font-bold text-gray-600">{{ value }}</span>
+                    <span class="font-mono text-gray-600">{{ value }}</span>
                 </template>
                 <template #unit="{ value }">
-                    <span class="font-bold text-green-700 uppercase">{{ value }}</span>
+                    <span>{{ value }}</span>
                 </template>
             </BaseDataTable>
           </div>

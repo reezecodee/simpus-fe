@@ -118,7 +118,7 @@ const handleSave = () => {
 
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-                <h1 class="text-[20px] font-bold text-gray-900 tracking-tight">Data Pasien</h1>
+                <h1 class="text-[20px] font-bold text-gray-900 tracking-tight uppercase">Data Pasien</h1>
                 <p class="text-[12px] text-gray-500 mt-1">Kelola data induk kependudukan pasien.</p>
             </div>
 

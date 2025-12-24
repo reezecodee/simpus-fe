@@ -310,7 +310,7 @@ const ejaNomor = (text: string) => text.replace('-', ' ').split('').join(' ')
 
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-                <h1 class="text-[20px] font-bold text-gray-900 tracking-tight">Dashboard Pendaftaran</h1>
+                <h1 class="text-[20px] font-bold text-gray-900 tracking-tight uppercase">Dashboard Pendaftaran</h1>
                 <p class="text-[12px] text-gray-500 mt-1">Pantau antrian poli dan registrasi pasien hari ini.</p>
             </div>
 
