@@ -6,7 +6,7 @@ import type { Component } from 'vue'
 // --- MOCK AUTH (Simulasi) ---
 // Nanti ini diganti dengan data dari Pinia Store / Auth Anda
 // Contoh Role: 'admin', 'pendaftaran', 'dokter', 'apoteker', 'kasir'
-const userRole = 'kasir' // Coba ganti string ini untuk tes
+const userRole = 'keuangan' // Coba ganti string ini untuk tes
 
 import {
     HomeIcon,
@@ -19,7 +19,12 @@ import {
     BookOpenIcon,
     CalendarIcon,
     ClockIcon,
-    ClipboardDocumentCheckIcon
+    ClipboardDocumentCheckIcon,
+    ArrowsRightLeftIcon,
+    ArrowUpTrayIcon,
+    DocumentChartBarIcon,
+    ReceiptPercentIcon,
+    WalletIcon
 } from '@heroicons/vue/24/outline'
 
 defineProps<{ isOpen: boolean }>()
@@ -43,7 +48,7 @@ const menus: MenuItem[] = [
     // Master Data: Hanya Admin
     { path: '/admin/users', icon: UsersIcon, title: 'Manajemen User', roles: ['admin'] },
 
-    // Pendaftaran: Admin & Staff Pendaftaran
+    // Pendaftaran
     { path: '/pendaftaran/dashboard', icon: HomeIcon, title: 'Dashboard', roles: ['pendaftaran'] },
     { path: '/pendaftaran/data-pasien', icon: UserGroupIcon, title: 'Data Pasien', roles: ['pendaftaran'] },
     { path: '/pendaftaran/laporan', icon: BookOpenIcon, title: 'Laporan Rekapitulasi', roles: ['pendaftaran'] },
@@ -55,11 +60,19 @@ const menus: MenuItem[] = [
     // Farmasi: Admin & Apoteker
     { path: '/farmasi', icon: BeakerIcon, title: 'Farmasi', roles: ['admin', 'apoteker'] },
 
-    // Kasir: Admin & Kasir
+    // Kasir
     { path: '/kasir/dashboard', icon: HomeIcon, title: 'Dashboard', roles: ['kasir'] },
     { path: '/kasir/riwayat-transaksi', icon: ClockIcon, title: 'Riwayat Transaksi', roles: ['kasir'] },
     { path: '/kasir/setoran', icon: BanknotesIcon, title: 'Setoran & Tutup Shift', roles: ['kasir'] },
     { path: '/kasir/monitoring-piutang', icon: ClipboardDocumentCheckIcon, title: 'Monitoring Piutang', roles: ['kasir'] },
+
+    // Keuangan
+    { path: '/keuangan/dashboard', icon: HomeIcon, title: 'Dashboard', roles: ['keuangan'] },
+    { path: '/keuangan/manajemen-piutang', icon: ReceiptPercentIcon, title: 'Manajemen Piutang', roles: ['keuangan'] },
+    { path: '/keuangan/riwayat-cicilan', icon: WalletIcon, title: 'Riwayat Cicilan', roles: ['keuangan'] },
+    { path: '/keuangan/rekonsiliasi', icon: ArrowsRightLeftIcon, title: 'Verifikasi Setoran', roles: ['keuangan'] },
+    { path: '/keuangan/expenditure', icon: ArrowUpTrayIcon, title: 'Pengeluaran & Biaya', roles: ['keuangan'] },
+    { path: '/keuangan/laporan-akuntansi', icon: DocumentChartBarIcon, title: 'Laporan Akuntansi', roles: ['keuangan'] },
 ]
 
 // 3. LOGIC FILTER MENU
