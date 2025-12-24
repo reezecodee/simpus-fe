@@ -6,11 +6,10 @@ import type { Component } from 'vue'
 // --- MOCK AUTH (Simulasi) ---
 // Nanti ini diganti dengan data dari Pinia Store / Auth Anda
 // Contoh Role: 'admin', 'pendaftaran', 'dokter', 'apoteker', 'kasir'
-const userRole = 'pendaftaran' // Coba ganti string ini untuk tes
+const userRole = 'kasir' // Coba ganti string ini untuk tes
 
 import {
     HomeIcon,
-    PencilSquareIcon,
     HeartIcon,
     BeakerIcon,
     BanknotesIcon,
@@ -18,7 +17,9 @@ import {
     UsersIcon,
     UserGroupIcon,
     BookOpenIcon,
-    CalendarIcon
+    CalendarIcon,
+    ClockIcon,
+    ClipboardDocumentCheckIcon
 } from '@heroicons/vue/24/outline'
 
 defineProps<{ isOpen: boolean }>()
@@ -51,13 +52,14 @@ const menus: MenuItem[] = [
     // Poli: Admin & Dokter & Perawat
     { path: '/poli/umum', icon: HeartIcon, title: 'Poliklinik', badge: 5, roles: ['admin', 'dokter', 'perawat'] },
 
-    { header: 'Layanan Penunjang', roles: ['admin', 'apoteker', 'kasir'] },
-
     // Farmasi: Admin & Apoteker
     { path: '/farmasi', icon: BeakerIcon, title: 'Farmasi', roles: ['admin', 'apoteker'] },
 
     // Kasir: Admin & Kasir
-    { path: '/kasir', icon: BanknotesIcon, title: 'Kasir', roles: ['admin', 'kasir'] },
+    { path: '/kasir/dashboard', icon: HomeIcon, title: 'Dashboard', roles: ['kasir'] },
+    { path: '/kasir/riwayat-transaksi', icon: ClockIcon, title: 'Riwayat Transaksi', roles: ['kasir'] },
+    { path: '/kasir/setoran', icon: BanknotesIcon, title: 'Setoran & Tutup Shift', roles: ['kasir'] },
+    { path: '/kasir/monitoring-piutang', icon: ClipboardDocumentCheckIcon, title: 'Monitoring Piutang', roles: ['kasir'] },
 ]
 
 // 3. LOGIC FILTER MENU
