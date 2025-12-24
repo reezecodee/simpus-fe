@@ -1,5 +1,5 @@
 import MainLayout from '@/layouts/MainLayout.vue'
-import { BookOpenIcon, CalendarIcon, HomeIcon, UserGroupIcon } from '@heroicons/vue/24/outline'
+import { BookOpenIcon, CalendarIcon, HomeIcon, PencilIcon, UserGroupIcon } from '@heroicons/vue/24/outline'
 import { type RouteRecordRaw } from 'vue-router'
 
 const pendaftaranRoutes: RouteRecordRaw[] = [
@@ -20,11 +20,19 @@ const pendaftaranRoutes: RouteRecordRaw[] = [
         path: 'data-pasien',
         name: 'Data Pasien',
         component: import('../../views/pendaftaran/DataPasien.vue'),
-
         meta: {
           title: 'Data Pasien',
           icon: UserGroupIcon,
         },
+      },
+      {
+        path: 'detail-biodata/:id',
+        name: 'Detail Biodata',
+        component: import('../../views/pendaftaran/DetailBiodata.vue'),
+        meta: {
+          title: 'Detail Biodata Pasien',
+          icon: PencilIcon
+        }
       },
       {
         path: 'laporan',
