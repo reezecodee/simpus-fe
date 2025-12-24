@@ -21,7 +21,7 @@ onUnmounted(() => document.removeEventListener('click', close))
 <template>
     <div ref="containerRef" class="relative inline-block text-left">
         <button @click.stop="toggle"
-            class="p-1 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-green-500/50">
+            class="p-1 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-green-500/50 cursor-pointer">
             <EllipsisVerticalIcon class="w-5 h-5" stroke-width="2" />
         </button>
 

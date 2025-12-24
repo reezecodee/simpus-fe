@@ -3,7 +3,6 @@ import { ref, watch } from 'vue'
 import BaseTable from './BaseTable.vue'
 import BasePagination from './BasePagination.vue'
 import BaseInput from './BaseInput.vue'
-import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 
 // Re-export interface biar bisa dipake parent
 export interface TableColumn {
@@ -21,6 +20,7 @@ interface Props {
     totalItems?: number
     totalPages?: number
     currentPage?: number
+    hideSearch?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -46,7 +46,7 @@ watch(searchQuery, (val) => {
 
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-[10px]">
 
-            <div class="w-full md:w-[250px]">
+            <div v-if="!hideSearch" class="w-full md:w-[250px]">
                 <BaseInput v-model="searchQuery" placeholder="Cari data..." class="bg-white" />
             </div>
 

@@ -21,7 +21,7 @@ type MenuItem =
 
 const menus: MenuItem[] = [
     { header: 'Menu Utama' },
-    { path: '/', icon: HomeIcon, title: 'Dashboard' },
+    { path: '/admin/dashboard', icon: HomeIcon, title: 'Dashboard' },
     { path: '/pendaftaran', icon: PencilSquareIcon, title: 'Pendaftaran' },
     { path: '/poli/umum', icon: HeartIcon, title: 'Poliklinik', badge: 5 },
     { header: 'Layanan' },

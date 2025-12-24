@@ -131,11 +131,13 @@ watch(() => route.path, () => { store.addTab(route) }, { immediate: true })
             </div>
 
             <main class="flex-1 bg-white overflow-y-auto p-[15px] relative">
-                <router-view v-slot="{ Component }">
-                    <keep-alive>
-                        <component :is="Component" :key="route.fullPath" />
-                    </keep-alive>
-                </router-view>
+                <div class="p-[15px] mx-auto font-sans text-[#1f2937]">
+                    <router-view v-slot="{ Component }">
+                        <keep-alive>
+                            <component :is="Component" :key="route.fullPath" />
+                        </keep-alive>
+                    </router-view>
+                </div>
             </main>
 
         </div>
