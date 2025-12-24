@@ -44,7 +44,13 @@ onUnmounted(() => {
     clearInterval(timer)
 })
 
-watch(() => route.path, () => { store.addTab(route) }, { immediate: true })
+watch(
+    () => route.path, // Yang dipantau
+    () => {
+        store.addTab(route)
+    },
+    { immediate: true } // PENTING: Supaya saat pertama kali refresh halaman, tab langsung muncul
+)
 </script>
 
 <template>

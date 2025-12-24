@@ -1,5 +1,5 @@
 import MainLayout from '@/layouts/MainLayout.vue'
-import { HomeIcon } from '@heroicons/vue/24/outline'
+import { BookOpenIcon, CalendarIcon, HomeIcon, UserGroupIcon } from '@heroicons/vue/24/outline'
 import { type RouteRecordRaw } from 'vue-router'
 
 const pendaftaranRoutes: RouteRecordRaw[] = [
@@ -9,13 +9,42 @@ const pendaftaranRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: 'dashboard',
+        name: 'Dashboard Pendaftaran',
         component: import('../../views/pendaftaran/Dashboard.vue'),
         meta: {
           title: 'Dashboard Pendaftaran',
-          icon: HomeIcon
-        }
-      }
-    ]
+          icon: HomeIcon,
+        },
+      },
+      {
+        path: 'data-pasien',
+        name: 'Data Pasien',
+        component: import('../../views/pendaftaran/DataPasien.vue'),
+
+        meta: {
+          title: 'Data Pasien',
+          icon: UserGroupIcon,
+        },
+      },
+      {
+        path: 'laporan',
+        name: 'Laporan Rekapitulasi',
+        component: import('../../views/pendaftaran/Laporan.vue'),
+        meta: {
+          title: 'Laporan Rekapitulasi',
+          icon: BookOpenIcon,
+        },
+      },
+      {
+        path: 'jadwal',
+        name: 'Jadwal Kerja',
+        component: import('../../views/pendaftaran/Jadwal.vue'),
+        meta: {
+          title: 'Jadwal Kerja',
+          icon: CalendarIcon,
+        },
+      },
+    ],
   },
 ]
 
