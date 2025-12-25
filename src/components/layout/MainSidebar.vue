@@ -6,7 +6,7 @@ import type { Component } from 'vue'
 // --- MOCK AUTH (Simulasi) ---
 // Nanti ini diganti dengan data dari Pinia Store / Auth Anda
 // Contoh Role: 'admin', 'pendaftaran', 'dokter', 'apoteker', 'kasir'
-const userRole = 'keuangan' // Coba ganti string ini untuk tes
+const userRole = 'logistik' // Coba ganti string ini untuk tes
 
 import {
     HomeIcon,
@@ -24,7 +24,10 @@ import {
     ArrowUpTrayIcon,
     DocumentChartBarIcon,
     ReceiptPercentIcon,
-    WalletIcon
+    WalletIcon,
+    TruckIcon,
+    ArrowDownTrayIcon,
+    PresentationChartLineIcon
 } from '@heroicons/vue/24/outline'
 
 defineProps<{ isOpen: boolean }>()
@@ -73,6 +76,14 @@ const menus: MenuItem[] = [
     { path: '/keuangan/rekonsiliasi', icon: ArrowsRightLeftIcon, title: 'Verifikasi Setoran', roles: ['keuangan'] },
     { path: '/keuangan/expenditure', icon: ArrowUpTrayIcon, title: 'Pengeluaran & Biaya', roles: ['keuangan'] },
     { path: '/keuangan/laporan-akuntansi', icon: DocumentChartBarIcon, title: 'Laporan Akuntansi', roles: ['keuangan'] },
+
+    // Logistik/Gudang
+    { path: '/logistik/dashboard', icon: HomeIcon, title: 'Dashboard', roles: ['logistik'] },
+    { path: '/logistik/katalog-obat', icon: BeakerIcon, title: 'Katalog Obat', roles: ['logistik'] },
+    { path: '/logistik/suplier', icon: TruckIcon, title: 'Suplier', roles: ['logistik'] },
+    { path: '/logistik/penerimaan-barang', icon: ArrowDownTrayIcon, title: 'Penerimaan Barang', roles: ['logistik'] },
+    { path: '/logistik/monitoring-saldo', icon: PresentationChartLineIcon, title: 'Monitoring Saldo', roles: ['logistik'] },
+    { path: '/logistik/mutasi', icon: ArrowsRightLeftIcon, title: 'Mutasi', roles: ['logistik'] },
 ]
 
 // 3. LOGIC FILTER MENU
