@@ -6,11 +6,10 @@ import type { Component } from 'vue'
 // --- MOCK AUTH (Simulasi) ---
 // Nanti ini diganti dengan data dari Pinia Store / Auth Anda
 // Contoh Role: 'admin', 'pendaftaran', 'dokter', 'apoteker', 'kasir'
-const userRole = 'ahli-gizi' // Coba ganti string ini untuk tes
+const userRole = 'perawat' // Coba ganti string ini untuk tes
 
 import {
     HomeIcon,
-    HeartIcon,
     BeakerIcon,
     BanknotesIcon,
     PowerIcon,
@@ -51,6 +50,7 @@ const menus: MenuItem[] = [
 
     // Dashboard: Semua bisa lihat
     // { path: '/admin/dashboard', icon: HomeIcon, title: 'Dashboard' },
+    // { path: '/perawat/dashboard', icon: HomeIcon, title: 'Dashboard Perawat', badge: 5, roles: ['admin', 'dokter', 'perawat'] },
 
     // Master Data: Hanya Admin
     { path: '/admin/users', icon: UsersIcon, title: 'Manajemen User', roles: ['admin'] },
@@ -61,8 +61,10 @@ const menus: MenuItem[] = [
     { path: '/pendaftaran/laporan', icon: BookOpenIcon, title: 'Laporan Rekapitulasi', roles: ['pendaftaran'] },
     { path: '/pendaftaran/jadwal', icon: CalendarIcon, title: 'Jadwal Kerja', roles: ['pendaftaran'] },
 
-    // Poli: Admin & Dokter & Perawat
-    { path: '/poli/umum', icon: HeartIcon, title: 'Poliklinik', badge: 5, roles: ['admin', 'dokter', 'perawat'] },
+    // Perawat
+    { path: '/perawat/dashboard', icon: HomeIcon, title: 'Dashboard Perawat', roles: ['perawat'] },
+    { path: '/perawat/triage', icon: TruckIcon, title: 'Triage Gawat Darurat', roles: ['perawat'] },
+    { path: '/perawat/asuhan', icon: ClipboardDocumentListIcon, title: 'Daftar Pasien Asuhan', roles: ['perawat'] },
 
     // Kasir
     { path: '/kasir/dashboard', icon: HomeIcon, title: 'Dashboard', roles: ['kasir'] },
