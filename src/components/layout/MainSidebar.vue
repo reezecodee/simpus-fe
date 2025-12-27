@@ -6,7 +6,7 @@ import type { Component } from 'vue'
 // --- MOCK AUTH (Simulasi) ---
 // Nanti ini diganti dengan data dari Pinia Store / Auth Anda
 // Contoh Role: 'admin', 'pendaftaran', 'dokter', 'apoteker', 'kasir'
-const userRole = 'penunjang' // Coba ganti string ini untuk tes
+const userRole = 'ahli-gizi' // Coba ganti string ini untuk tes
 
 import {
     HomeIcon,
@@ -97,6 +97,11 @@ const menus: MenuItem[] = [
     { path: '/penunjang/dashboard', icon: HomeIcon, title: 'Dashboard', roles: ['penunjang'] },
     { path: '/penunjang/antrian', icon: ClipboardDocumentListIcon, title: 'Worklist Penunjang', roles: ['penunjang'] },
     { path: '/penunjang/riwayat', icon: ArchiveBoxIcon, title: 'Riwayat Penunjang', roles: ['penunjang'] },
+
+    // Ahli Gizi
+    { path: '/gizi/dashboard', icon: HomeIcon, title: 'Dashboard', roles: ['ahli-gizi'] },
+    { path: '/gizi/asuhan-gizi', icon: UserGroupIcon, title: 'Daftar Pasien & Skrining', roles: ['ahli-gizi'] },
+    { path: '/gizi/order-makanan', icon: ClipboardDocumentCheckIcon, title: 'Rekap & Label Makanan', roles: ['ahli-gizi'] },
 ]
 
 // 3. LOGIC FILTER MENU
