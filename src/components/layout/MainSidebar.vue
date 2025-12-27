@@ -6,7 +6,7 @@ import type { Component } from 'vue'
 // --- MOCK AUTH (Simulasi) ---
 // Nanti ini diganti dengan data dari Pinia Store / Auth Anda
 // Contoh Role: 'admin', 'pendaftaran', 'dokter', 'apoteker', 'kasir'
-const userRole = 'logistik' // Coba ganti string ini untuk tes
+const userRole = 'farmasi' // Coba ganti string ini untuk tes
 
 import {
     HomeIcon,
@@ -27,7 +27,10 @@ import {
     WalletIcon,
     TruckIcon,
     ArrowDownTrayIcon,
-    PresentationChartLineIcon
+    PresentationChartLineIcon,
+    ClipboardDocumentListIcon,
+    ShoppingBagIcon,
+    CheckBadgeIcon
 } from '@heroicons/vue/24/outline'
 
 defineProps<{ isOpen: boolean }>()
@@ -84,6 +87,13 @@ const menus: MenuItem[] = [
     { path: '/logistik/penerimaan-barang', icon: ArrowDownTrayIcon, title: 'Penerimaan Barang', roles: ['logistik'] },
     { path: '/logistik/monitoring-saldo', icon: PresentationChartLineIcon, title: 'Monitoring Saldo', roles: ['logistik'] },
     { path: '/logistik/mutasi', icon: ArrowsRightLeftIcon, title: 'Mutasi', roles: ['logistik'] },
+
+    // Farmasi
+    { path: '/farmasi/dashboard', icon: HomeIcon, title: 'Dashboard', roles: ['farmasi'] },
+    { path: '/farmasi/antrian-resep', icon: ClipboardDocumentListIcon, title: 'Antrian Resep', roles: ['farmasi'] },
+    { path: '/farmasi/penjualan-bebas', icon: ShoppingBagIcon, title: 'Penjualan Bebas (OTC)', roles: ['farmasi'] },
+    { path: '/farmasi/penyerahan-obat', icon: CheckBadgeIcon, title: 'Penyerahan Obat', roles: ['farmasi'] },
+    { path: '/farmasi/riwayat-farmasi', icon: ClockIcon, title: 'Riwayat Farmasi', roles: ['farmasi'] },
 ]
 
 // 3. LOGIC FILTER MENU
